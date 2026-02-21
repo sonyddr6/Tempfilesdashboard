@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Round');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background-dark text-gray-100 font-sans min-h-screen transition-colors duration-200 antialiased;
+    background-color: #0B0E14;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-neon {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+  }
+
+  .swipe-card {
+    transition: transform 0.3s ease;
+    @apply relative z-10;
+  }
+
+  .card-container:hover .swipe-card {
+    transform: translateX(-120px);
+  }
+
+  .action-bg {
+    @apply absolute top-0 bottom-0 right-0 w-full flex justify-end items-center rounded-xl z-0;
+  }
+
+  .text-gradient {
+    background: linear-gradient(90deg, theme('colors.primary'), theme('colors.secondary'));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-panel {
+    @apply bg-surface-dark/80 backdrop-blur-md border border-border-dark rounded-xl shadow-lg transition-all duration-300;
+  }
+}
+
+/* Custom scrollbar for dark mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4B5563;
+}
+
+.status-dot-glow {
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
